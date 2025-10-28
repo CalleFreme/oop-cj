@@ -6,10 +6,10 @@ Course repo for Objekterienterad programmering och design.
 
 ## Question box
 
-### När vill vi skriva en klass, och när vill vi skriva en struct?
+### _När vill vi skriva en klass, och när vill vi skriva en struct?_
 
 
-### Hur kan man kontrollera om en sträng är tom?
+### _Hur kan man kontrollera om en sträng är tom?_
 Låt säga att vi har en funktion som tar in ett namn, d.v.s. en string, och skriver ut "Hej <namn>!".
 Innan vi skriver ut eller gör något annat med strängen, vill vi kontrollera att strängen inte är tom. I C++ kan vi använda string-metoden _empty()_, som returnerar true eller false. Om längden på strängen är 0, så returneras empty() alltså true. Samma sak som _name.length == 0_.
 ```cpp
@@ -25,7 +25,7 @@ void print_name(const std::string& name) {
 }
 ```
 
-### Kostar det något att ha en abstrakt klass som delar beteende med ärvande klasser?
+### _Kostar det något att ha en abstrakt klass som delar beteende med ärvande klasser?_
 Ja, men kostnaden är oftast marginell och motiverad.
 En abstrakt klass är en designkonstruktion, inte en runtime-funktion i sig. Den kan innehålla både:
 
@@ -44,9 +44,9 @@ Däremot minskar du ofta duplicerad kod och förbättrar underhållbarhet, vilke
 Slutsats:
 Abstrakta klasser används för att skapa logisk struktur och återanvändning. Den lilla tekniska overheaden är nästan alltid värd det om hierarkin är välmotiverad.
 
-### Hur utvecklar man bibliotek som kan återanvändas i andra projekt?
+### _Hur utvecklar man bibliotek som kan återanvändas i andra projekt?_
 
-### Vad innebär RTTI? Är det tecken på dålig design?
+### _Vad innebär RTTI? Är det tecken på dålig design?_
 RTTI = Run-Time Type Information
 Ett system i C++ som låter dig ta reda på ett objekts verkliga typ under körning, t.ex. med dynamic_cast eller typeid.
 
@@ -65,7 +65,7 @@ Upprepade dynamic_cast i produktionslogik för att avgöra "vilken typ" objektet
 Slutsats:
 RTTI är inte tecken på dålig design – men överanvändning kan vara en röd flagga.
 
-### När behöver vi en constructor?
+### _När behöver vi en constructor?_
 En konstruktor behövs när:
 - Ett objekt behöver initialiseras i ett definierat tillstånd.
 - Medlemsvariabler kräver värden vid skapande.
