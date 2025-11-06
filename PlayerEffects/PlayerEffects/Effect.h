@@ -2,6 +2,11 @@
 #include <iostream>
 #include "Player.h"
 
+enum class EffectType {
+    Slow = 1,
+    Burn = 2
+};
+
 struct Effect {
 	virtual ~Effect() = default; // Måste ha virtuell destruktor i bas-klasser.
 	virtual void apply(Player& player) = 0;	// Ren virtuell funktion. "= 0" betyder att den måste implementeras i subklasser.

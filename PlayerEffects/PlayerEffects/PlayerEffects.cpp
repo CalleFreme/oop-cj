@@ -22,10 +22,10 @@
 
 // Vi vill använda en "fabrik" för att skapa effekter baserat på en kod (1 = Slow, 2 = Burn)
 // Returnerar en unik pekare till en Effect. Använder unique_ptr för att hantera minnet automatiskt.
-std::unique_ptr<Effect> makeEffect(int code) {
-    switch (code) {
-    case 1: return std::make_unique<Slow>();
-    case 2: return std::make_unique<Burn>();
+std::unique_ptr<Effect> makeEffect(EffectType type) {
+    switch (type) {
+    case EffectType::Slow: return std::make_unique<Slow>();
+    case EffectType::Burn: return std::make_unique<Burn>();
     default: return nullptr;
     }
 }
@@ -35,9 +35,9 @@ int main()
     // Vårt huvudprogram:
 	// Vi börjar med att skapa och lagra några effekter i en vektor.
     std::vector<std::unique_ptr<Effect>> effects;
-    effects.push_back(makeEffect(1)); // Slow
-    effects.push_back(makeEffect(2)); // Burn
-    
+    effects.push_back(makeEffect(EffectType::Slow));
+    effects.push_back(makeEffect(EffectType::Burn));
+
 	// Skapa en spelare
 	Player player("Mister Hero"); // Vanligt objekt på stacken. Player-objektet kommer att förstöras automatiskt när det går ur scope, d.v.s. när vi lämnar main-funktionen.
 
@@ -57,8 +57,8 @@ int main()
 	// Genererar random effekter och applicerar dem tills spelaren är död
     std::cout << "\nApplying random effects until player is defeated:\n";
     while (player.getHealth() > 0) {
-        int code = (rand() % 2) + 1; // Slumpa fram 1 eller 2
-        auto effect = makeEffect(code);
+        EffectType type = static_cast<EffectType>((rand() % 2) + 1); // Slumpa fram 1 eller 2
+        auto effect = makeEffect(type);
         effect->apply(player);
 		// Vänta lite mellan effekter
 		std::this_thread::sleep_for(std::chrono::milliseconds(700));
