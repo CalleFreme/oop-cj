@@ -1,13 +1,18 @@
-//
-// Created by hula_ on 2025-11-07.
-//
+#pragma once
 
-#ifndef GAMELAB1_CHARACTER_H
-#define GAMELAB1_CHARACTER_H
-
+#include <vector>
+#include "Public/Effect.h"
 
 class Character {
+protected:
+    int health;
+    float speed;
+    std::vector<Effect> activeEffects;
+public:
+    Character();
+    virtual ~Character();
+    virtual void move() = 0;
+    virtual void attack() = 0;
+    virtual void defend() = 0;
+
 };
-
-
-#endif //GAMELAB1_CHARACTER_H
