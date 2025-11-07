@@ -1,29 +1,7 @@
-#include "main.h"
-#include <iostream>
-#include <thread>
-#include <vector>
-#include "Player.h"
-#include "Effect.h"
 
 int main()
 {
-    std::vector<std::unique_ptr<Effect>> effects;
-    effects.push_back(Effect::makeEffect(EffectType::Slow));
-    effects.push_back(Effect::makeEffect(EffectType::Burn));
-	Player player("Mister Hero");
-	std::cout << player.getName() << " enters the chamber of doom with " << player.getHealth() << " health and speed " << player.getSpeed() << "...\n";
-    std::this_thread::sleep_for(std::chrono::milliseconds(1500));
-	for (const auto& effect : effects) {
-		effect->apply(player);
-	}
-    std::cout << "\nApplying random effects until player is defeated:\n";
-    while (player.getHealth() > 0) {
-        EffectType type = static_cast<EffectType>((rand() % 2) + 1);
-        auto effect = Effect::makeEffect(type);
-        effect->apply(player);
-		std::this_thread::sleep_for(std::chrono::milliseconds(700));
-	}
-	return 0;
+
 
 }
 
