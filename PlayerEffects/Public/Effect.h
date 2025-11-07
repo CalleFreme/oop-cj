@@ -12,6 +12,14 @@ public:
 	virtual void remove() = 0;
 	const std::string getName() const;
 
+private:
+	std::string name;
+
+protected:
+	float effectStrength;
+	float modifier;
+	float duration;
+
 };
 
 class FreezeEffect : public Effect {
