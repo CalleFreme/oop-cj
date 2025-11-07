@@ -1,3 +1,17 @@
 #include "../Public/Player.h"
-#include <iostream>
 
+Player::Player() {
+
+}
+
+void Player::move() {
+
+}
+
+void Player::attack() {
+
+}
+
+void Player::defend() {
+
+}
