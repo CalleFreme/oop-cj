@@ -1,8 +1,10 @@
 
+#include "Public/GameState.h"
+
 int main()
 {
-
-
+    GameState game = GameState();
+    game.run();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

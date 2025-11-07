@@ -1,13 +1,21 @@
-//
-// Created by hula_ on 2025-11-07.
-//
+#pragma once
+#include <vector>
 
-#ifndef GAMELAB1_GAMESTATE_H
-#define GAMELAB1_GAMESTATE_H
 
+class UserInterface;
+class Character;
 
 class GameState {
+public:
+    GameState() : userInterface(nullptr), players(nullptr), enemies(nullptr) {
+    } ;
+    void run();
+private:
+    void executePlayerActions();
+    void executeEnemyActions();
+    void readInput();
+
+    UserInterface* userInterface;
+    std::vector<Character>* players;
+    std::vector<Character>* enemies;
 };
-
-
-#endif //GAMELAB1_GAMESTATE_H
