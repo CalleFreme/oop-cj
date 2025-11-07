@@ -1,13 +1,12 @@
-//
-// Created by hula_ on 2025-11-07.
-//
+#pragma once
+#include "Public/Character.h"
 
-#ifndef GAMELAB1_ENEMY_H
-#define GAMELAB1_ENEMY_H
-
-
-class Enemy {
+class Enemy : public Character {
+public:
+    Enemy();
+    ~Enemy();
+    void move() override;
+    void attack() override;
+    void defend() override;
+    void runAi();
 };
-
-
-#endif //GAMELAB1_ENEMY_H

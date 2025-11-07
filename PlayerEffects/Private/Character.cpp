@@ -1,5 +1,17 @@
-//
-// Created by hula_ on 2025-11-07.
-//
-
 #include "../Public/Character.h"
+
+Character::Character() {
+
+}
+
+void Character::move() {
+
+}
+
+void Character::attack() {
+
+}
+
+void Character::defend() {
+
+}
